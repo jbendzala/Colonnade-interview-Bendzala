@@ -36,7 +36,9 @@ export const FavouritesCard = ({ id }: FavouritesCardProps) => {
         },
       }}
     >
-      <CardMedia sx={{ height: 290 }} image={movieInfo?.Poster} />
+      {movieInfo?.Poster && (
+        <CardMedia sx={{ height: 290 }} image={movieInfo.Poster} />
+      )}
       <CardContent>
         <Stack>
           <Tooltip title={movieInfo?.Title} arrow>
@@ -53,18 +55,12 @@ export const FavouritesCard = ({ id }: FavouritesCardProps) => {
               {movieInfo?.Title}
             </Typography>
           </Tooltip>
-          {/* <Stack direction='row' spacing={1}>
-            <Typography variant='h6' color='text.secondary'>
-              Year:
-            </Typography>
-            <Typography variant='h6'>{year}</Typography>
-          </Stack>
           <Stack direction='row' spacing={1}>
-            <Typography variant='subtitle1' color='text.secondary'>
-              Type:
+            <Typography variant='h6' color='text.secondary'>
+              Genre:
             </Typography>
-            <Typography variant='subtitle1'>{contentType}</Typography>
-          </Stack> */}
+            <Typography variant='h6'>{movieInfo?.Genre}</Typography>
+          </Stack>
         </Stack>
       </CardContent>
       <CardActions sx={{ alignItems: "center", justifyContent: "center" }}>
